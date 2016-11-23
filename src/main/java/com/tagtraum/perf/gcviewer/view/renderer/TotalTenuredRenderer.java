@@ -49,6 +49,8 @@ public class TotalTenuredRenderer extends PolygonChartRenderer {
                         polygon.addPoint(0, (double)tenured.getTotal());
                     }
                     polygon.addPoint(tenured.getTimestamp() - model.getFirstPauseTimeStamp() + event.getPause(),
+                            lastTotal);
+                    polygon.addPoint(tenured.getTimestamp() - model.getFirstPauseTimeStamp() + event.getPause(),
                             tenured.getTotal());
                     lastTotal = tenured.getTotal();
                 }
